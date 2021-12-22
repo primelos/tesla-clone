@@ -12,24 +12,24 @@ const Header = () => {
 
   return (
     <Container>
-      <a>
+      <a href="# ">
         <img src="/images/logo.svg" alt="" />
       </a>
       <Menu>
         {cars &&
           cars.map((car, index) => {
             return (
-              <a key={index} href="javascript:void(0)">
+              <a key={index} href="# ">
                 {car}
               </a>
             );
           })}
-        <a href="javascript:void(0)">Solar Roof</a>
-        <a href="javascript:void(0)">Solar Panels</a>
+        <a href="# ">Solar Roof</a>
+        <a href="# ">Solar Panels</a>
       </Menu>
       <RightMenu>
-        <a href="javascript:void(0)">Shop</a>
-        <a href="javascript:void(0)">Account</a>
+        <a href="# ">Shop</a>
+        <a href="# ">Account</a>
         <CustomMenu onClick={() => setBurgerStatus(true)} />
       </RightMenu>
       <BurgerNav show={burgerStatus} onClick={() => setBurgerStatus(false)}>
@@ -37,43 +37,43 @@ const Header = () => {
           <CustomClose />
         </CloseWrapper>
         <li>
-          <a href="javascript:void(0)">Existing Inventory</a>
+          <a href="# ">Existing Inventory</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Used Inventory</a>
+          <a href="# ">Used Inventory</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Trade-in</a>
+          <a href="# ">Trade-in</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Cybertruck</a>
+          <a href="# ">Cybertruck</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Roadster </a>
+          <a href="# ">Roadster </a>
         </li>
         <li>
-          <a href="javascript:void(0)">Semi</a>
+          <a href="# ">Semi</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Charging</a>
+          <a href="# ">Charging</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Powerwall</a>
+          <a href="# ">Powerwall</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Commercial Energy</a>
+          <a href="# ">Commercial Energy</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Utilities</a>
+          <a href="# ">Utilities</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Find Us</a>
+          <a href="# ">Find Us</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Support</a>
+          <a href="# ">Support</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Investor Relations</a>
+          <a href="# ">Investor Relations</a>
         </li>
       </BurgerNav>
     </Container>
