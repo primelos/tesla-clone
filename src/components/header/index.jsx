@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { selectCars } from "../../features/car/carSlice";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [burgerStatus, setBurgerStatus] = useState(false);
+  const cars = useSelector(selectCars);
+  console.log(cars);
 
   return (
     <Container>
@@ -12,20 +16,23 @@ const Header = () => {
         <img src="/images/logo.svg" alt="" />
       </a>
       <Menu>
-        <a href="#">Model S</a>
-
-        <a href="#">Model 3</a>
-
-        <a href="#">Model X</a>
-
-        <a href="#">Model Y</a>
+        {cars &&
+          cars.map((car, index) => {
+            return (
+              <a key={index} href="#">
+                {car}
+              </a>
+            );
+          })}
+        <a href="#">Solar Roof</a>
+        <a href="#">Solar Panels</a>
       </Menu>
       <RightMenu>
         <a href="#">Shop</a>
-        <a href="#">Tesla Account</a>
-        <CustomMenu />
+        <a href="#">Account</a>
+        <CustomMenu onClick={() => setBurgerStatus(true)} />
       </RightMenu>
-      <BurgerNav show={burgerStatus}>
+      <BurgerNav show={burgerStatus} onClick={() => setBurgerStatus(false)}>
         <CloseWrapper>
           <CustomClose />
         </CloseWrapper>
@@ -48,7 +55,25 @@ const Header = () => {
           <a href="#">Semi</a>
         </li>
         <li>
-          <a href="#"> </a>
+          <a href="#">Charging</a>
+        </li>
+        <li>
+          <a href="#">Powerwall</a>
+        </li>
+        <li>
+          <a href="#">Commercial Energy</a>
+        </li>
+        <li>
+          <a href="#">Utilities</a>
+        </li>
+        <li>
+          <a href="#">Find Us</a>
+        </li>
+        <li>
+          <a href="#">Support</a>
+        </li>
+        <li>
+          <a href="#">Investor Relations</a>
         </li>
       </BurgerNav>
     </Container>
@@ -77,7 +102,8 @@ const Menu = styled.div`
   justify-content: center;
   a {
     font-weight: 600;
-    text-transform: uppercase;
+    margin: 0 10px;
+    /* text-transform: uppercase; */
     padding: 0 10px;
     flex-wrap: nowrap;
   }
@@ -90,10 +116,12 @@ const RightMenu = styled.div`
 display: flex;
 align-items: center;
 
+
   a {
     font-weight: 600;
-    text-transform: uppercase;
-    marigh-right: 10px
+    /* text-transform: uppercase; */
+    /* margin-right: 15px */
+    margin: 0 15px
     
 `;
 
@@ -115,6 +143,7 @@ const BurgerNav = styled.div`
   flex-direction: column;
   text-align:start;
   transform: ${(props) => (props.show ? "translateX(0)" : "translateX(100%)")};
+  transition: transform 0.2s;
   li {
     padding:15px 0;
     border-bottom: 1px solid rgba(0,0,0,.2);

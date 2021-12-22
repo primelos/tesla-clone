@@ -46,9 +46,14 @@ const Wrap = styled.div`
 `;
 
 const ItemText = styled.div`
-  padding-top: 15vh;
+  padding-top: 18vh;
   text-align: center;
   z-index: -1;
+  h1 {
+    letter-spacing: 2px;
+    font-size: 38px;
+    font-weight: 500;
+  }
 `;
 
 const ButtonGroup = styled.div`
