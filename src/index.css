@@ -12,6 +12,7 @@ body {
 }
 a {
   text-decoration: none;
+  font-family: "DM Sans", sans-serif;
 }
 @keyframes animateDown {
   0%,
